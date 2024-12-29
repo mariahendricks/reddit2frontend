@@ -40,7 +40,7 @@ export const Votes = ({
                 }} 
                 className={cn(
                     'button-tertiary', 
-                    userId && upvotes.includes(userId) && 'text-primary'
+                    userId && upvotes.includes(userId) && 'text-emerald-400'
                 )}
             >
                 ⬆︎
@@ -53,7 +53,7 @@ export const Votes = ({
                 }} 
                 className={cn(
                     'button-tertiary', 
-                    userId && downvotes.includes(userId) && 'text-primary'
+                    userId && downvotes.includes(userId) && 'text-red-500'
                 )}
             >
                 ⬇︎

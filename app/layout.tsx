@@ -1,4 +1,4 @@
-import { Albert_Sans } from 'next/font/google';
+import { Livvic } from 'next/font/google';
 import type { Metadata } from 'next';
 import { Toaster } from 'sonner';
 
@@ -6,7 +6,7 @@ import { cn } from '@/utils/classnames';
 import { QueryClientProvider } from '@/providers/query-client-provider';
 import './globals.css';
 
-const albertSans = Albert_Sans({ subsets: ['latin'] })
+const livvic= Livvic({ weight: '400', subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Your Blog Posts',
@@ -22,8 +22,8 @@ export default function RootLayout({
     <html lang='en'>
       <body
         className={cn(
-          albertSans.className,
-          'flex min-h-screen flex-col items-center bg-zinc-50 font-medium text-zinc-800',
+          livvic.className,
+          'flex min-h-screen flex-col items-center bg-blue-50 font-medium text-zinc-800',
         )}
       >
         <QueryClientProvider>

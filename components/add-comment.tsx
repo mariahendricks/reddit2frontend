@@ -8,16 +8,23 @@ import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { FieldError } from "./field-error";
 
-export const AddCommentForm = ({postId}: { postId: string}) => {
+export const AddCommentForm = ({
+    postId
+}: { 
+    postId: string
+}) => {
     const { mutate, isPending } = useMutation({
         mutationFn: async (values: CommentValues) => {
             handleServerActionError(await addComment({data: values, postId}))
         },
         onError: toastServerError,
-
     })
 
-    const {register, handleSubmit, formState: {errors}} = useForm<CommentValues>({
+    const {
+        register, 
+        handleSubmit, 
+        formState: {errors},
+    } = useForm<CommentValues>({
         resolver: zodResolver(commentActionSchema),
     })
 
@@ -27,6 +34,7 @@ export const AddCommentForm = ({postId}: { postId: string}) => {
                 {...register('content')}
                 placeholder='Add a comment'
                 name='content'
+                className='input min-h-46 rounded-3xl' 
             />
             <FieldError error={errors.content} />
             <button type="submit" className='button-primary'>

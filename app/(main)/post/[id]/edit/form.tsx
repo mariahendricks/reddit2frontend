@@ -45,7 +45,7 @@ export const EditPostForm = ({
                 className='input min-h-96 rounded-3xl' 
             />
             <FieldError error={errors.content} />
-            <button type='submit' className='button-primary'>
+            <button type='submit' className='button-quatenary'>
                 {isPending ? 'saving changes...' : 'save changes'}
             </button>
         </form>

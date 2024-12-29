@@ -40,12 +40,12 @@ export const HomePosts = ({
             key={id}
             role='button'
             onClick={() => router.push(`/post/${id}`)}
-            className='flex flex-col w-full rounded-3xl bg-white p-4'
+            className='flex flex-col w-full rounded-3xl bg-white p-4 drop-shadow-md'
           >
-            <span className='text-zinc-600'>{author.username}</span>
+            <span className='text-fuchsia-500'>{author.username}</span>
             <p className="text-sm text-zinc-500">{createdAt}</p>
-            <h2 className='text-lg font-bold'>{title}</h2>
-            <p className='text-lg'>{content}</p>
+            <h2 className='text-sky-800 text-lg font-extrabold'>{title}</h2>
+            <p className='text-base text-sky-600'>{content}</p>
             <Votes
               postId={id} 
               userId={userId}
