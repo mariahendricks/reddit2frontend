@@ -35,7 +35,7 @@ export const HomePosts = ({
     
     return (
       <section className='flex flex-col items-center gap-4'>
-        {currentPosts.map(({ id, title, author, createdAt, score, upvotes, downvotes }) => (
+        {currentPosts.map(({ id, title, author, content, createdAt, score, upvotes, downvotes }) => (
           <div
             key={id}
             role='button'
@@ -45,6 +45,7 @@ export const HomePosts = ({
             <span className='text-zinc-600'>{author.username}</span>
             <p className="text-sm text-zinc-500">{createdAt}</p>
             <h2 className='text-lg font-bold'>{title}</h2>
+            <p className='text-lg'>{content}</p>
             <Votes
               postId={id} 
               userId={userId}

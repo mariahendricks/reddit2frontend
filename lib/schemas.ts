@@ -69,7 +69,7 @@ export const homepagePostsSchema = z.object({
             author: z.object({
                 username: z.string(),
             }),
-
+            content: z.string().optional(),
             score: z.number(),
             upvotes: z.array(z.string()),
             downvotes: z.array(z.string()),
