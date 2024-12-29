@@ -28,9 +28,9 @@ export default async function PostPage({
             <article className='space-y-4'>
                 <header className='flex items-start justify-between'>
                     <div className='space-y-1'>
-                        <span className='text-fuchsia-500'>{post.author.username}</span>
+                        <span className='text-sky-600'>{post.author.username}</span>
                         <p className="text-sm text-zinc-500">{post.createdAt}</p>
-                        <h1 className='text-2xl font-bold text-sky-800'>{post.title}</h1>
+                        <h1 className='text-2xl font-bold text-zinc-800'>{post.title}</h1>
                     </div>
                     {isAuthor && (
                         <div className='flex gap-3'>
@@ -41,7 +41,7 @@ export default async function PostPage({
                         </div>
                     )}
                 </header>
-                    <p className='text-sky-600 text-lg'>
+                    <p className='text-zinc-500 text-lg'>
                         {post.content}
                     </p>
             </article>
@@ -56,7 +56,7 @@ export default async function PostPage({
                         return (
                         <article key={comment._id} className="comment space-y-4 border-b pb-4">
                         <header className="flex items-center gap-3">
-                            <span className='text-fuchsia-500'>{comment.author.username}</span>
+                            <span className='text-sky-600'>{comment.author.username}</span>
                             <span className="text-sm text-zinc-500">{comment.createdAt}</span>
                         </header>
                         <p>{comment.content}</p>
