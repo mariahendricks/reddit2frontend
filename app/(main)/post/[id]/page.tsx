@@ -29,6 +29,7 @@ export default async function PostPage({
                 <header className='flex items-start justify-between'>
                     <div className='space-y-1'>
                         <span className='text-zinc-600'>{post.author.username}</span>
+                        <p className="text-sm text-zinc-500">{post.createdAt}</p>
                         <h1 className='text-2xl font-bold'>{post.title}</h1>
                     </div>
                     {isAuthor && (
@@ -56,7 +57,7 @@ export default async function PostPage({
                         <article key={comment._id} className="comment space-y-4 border-b pb-4">
                         <header className="flex items-center gap-3">
                             <span className="text-zinc-600">{comment.author.username}</span>
-                            <span className="text-sm text-zinc-500">{new Date(comment.createdAt).toLocaleString()}</span>
+                            <span className="text-sm text-zinc-500">{comment.createdAt}</span>
                         </header>
                         <p>{comment.content}</p>
                         {(isAuthor || isCommentAuthor) && (
