@@ -1,5 +1,4 @@
 'use client'
-
 import { addComment } from "@/actions/add-comment";
 import { handleServerActionError, toastServerError } from "@/lib/error-handling";
 import { commentActionSchema, CommentValues } from "@/lib/schemas";
@@ -22,14 +21,20 @@ export const AddCommentForm = ({
 
     const {
         register, 
-        handleSubmit, 
+        handleSubmit,
+        reset,
         formState: {errors},
     } = useForm<CommentValues>({
         resolver: zodResolver(commentActionSchema),
     })
 
+    const onSubmit = (values: CommentValues) => {
+        mutate(values);
+        reset();
+    }
+
     return (
-        <form onSubmit={handleSubmit((values) => mutate(values))} className='flex w-full flex-col gap-4'>
+        <form onSubmit={handleSubmit(onSubmit)} className='flex w-full flex-col gap-4'>
             <textarea 
                 {...register('content')}
                 placeholder='Add a comment'
